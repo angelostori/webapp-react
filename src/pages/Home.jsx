@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
+import axios from "axios";
 
 export default function Home() {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/movies")
-            .then(res => res.json())
-            .then(data => setMovies(data));
+        axios.get("http://localhost:3000/api/movies")
+            .then(res => {
+                console.log(res);
+                setMovies(res.data)
+            })
     }, []);
 
     return (
