@@ -5,7 +5,7 @@ export default function Layout() {
         <div>
             <header>
                 <nav>
-                    <Link to="/">Home</Link>
+                    <Link to="/"><i className="bi bi-house-fill"></i></Link>
                 </nav>
             </header>
 
