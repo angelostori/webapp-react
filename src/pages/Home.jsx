@@ -8,8 +8,10 @@ export default function Home() {
     useEffect(() => {
         axios.get("http://localhost:3000/api/movies")
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 setMovies(res.data)
+            }).catch(err => {
+                console.log(err.message);
             })
     }, []);
 
