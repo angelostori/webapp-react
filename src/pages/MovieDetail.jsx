@@ -14,10 +14,12 @@ export default function MovieDetail() {
     if (!movie) return <p>Caricamento...</p>;
 
     return (
-        <div>
-            <h1>{movie.title}</h1>
-            <p>{movie.abstract}</p>
-            <p>Regista: {movie.director}</p>
+        <div className="container my-5">
+            <div className="bg-white p-4 rounded shadow-sm">
+                <h1 className="mb-3">{movie.title}</h1>
+                <p className="lead">{movie.abstract}</p>
+                <p className="text-muted">Regista: {movie.director}</p>
+            </div>
         </div>
     );
 }
