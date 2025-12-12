@@ -17,7 +17,7 @@ export default function Home() {
 
     return (
         <>
-            <div className="p-5 mb-4 bg-light rounded-3">
+            <div className="p-5 mb-4 bg-light">
                 <div className="container-fluid py-5">
                     <h1 className="display-5 fw-bold">Lista Film</h1>
                     <p className="col-md-8 fs-4">
@@ -32,7 +32,7 @@ export default function Home() {
             <div className="container my-5">
                 <div className="row g-4">
                     {movies.map(movie => (
-                        <div key={movie.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div key={movie.id} className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <MovieCard movie={movie} />
                         </div>
                     ))}
