@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
+import Jumbotron from "../components/Jumbotron";
 import axios from "axios";
 
 export default function Home() {
@@ -17,17 +18,9 @@ export default function Home() {
 
     return (
         <>
-            <div className="p-5 mb-4 bg-light">
-                <div className="container-fluid py-5">
-                    <h1 className="display-5 fw-bold">Lista Film</h1>
-                    <p className="col-md-8 fs-4">
-                        Using a series of utilities, you can create this jumbotron, just
-                        like the one in previous versions of Bootstrap. Check out the
-                        examples below for how you can remix and restyle it to your liking.
-                    </p>
-                </div>
-            </div>
-
+            <Jumbotron pageName="Lista Film" text=" Using a series of utilities, you can create this jumbotron, just
+                                                    like the one in previous versions of Bootstrap. Check out the
+                                                    examples below for how you can remix and restyle it to your liking." />
 
             <div className="container my-5">
                 <div className="row g-4">
