@@ -39,7 +39,8 @@ export default function MovieDetail() {
                 <div className="col-6">
                     <img src={`http://localhost:3000/movies_cover/${movie.image}`}
                         alt={movie.title}
-                        className="img-fluid rounded mb-4 shadow-sm" />
+                        className="img-fluid rounded mb-4 shadow-sm"
+                        style={{ width: "100%", height: "auto" }} />
                 </div>
                 <div className="col-6">
                     <h1 className="mb-3">{movie.title}</h1>
