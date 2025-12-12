@@ -12,7 +12,7 @@ export default function Layout() {
                 </nav>
             </header>
 
-            <main className="flex-fill">
+            <main className="flex-fill bg-secondary">
                 <Outlet />
                 {/*Visualizzazione pagine*/}
             </main>
