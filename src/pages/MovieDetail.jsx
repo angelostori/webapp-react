@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { DotPulse } from 'ldrs/react'
+import 'ldrs/react/DotPulse.css'
+
+// Default values shown
+
 
 export default function MovieDetail() {
     const { id } = useParams();
@@ -11,7 +16,21 @@ export default function MovieDetail() {
             .then(data => setMovie(data));
     }, [id]);
 
-    if (!movie) return <p>Caricamento...</p>;
+    if (!movie) return <DotPulse size="43" speed="1.3" color="black" />;
+
+    function getStarRating(vote) {
+        console.log(vote);
+        let stars = []
+
+        for (let i = 1; i <= 5; i++) {
+            if (i <= vote) {
+                stars.push(<i key={i} className="bi bi-star-fill text-warning"></i>);
+            } else {
+                stars.push(<i key={i} className="bi bi-star text-warning"></i>);
+            }
+        }
+        return stars;
+    }
 
     return (
         <div className="container my-5">
@@ -32,7 +51,7 @@ export default function MovieDetail() {
                 <div className="col-12">
                     <h3 className="mb-4">Reviews</h3>
 
-                    {movie.reviews.map((review, index) =>
+                    {movie.reviews?.map((review, index) =>
                         <div key={index} className="mb-4 pb-3 border-bottom">
 
                             <div className="d-flex justify-content-between">
@@ -40,7 +59,7 @@ export default function MovieDetail() {
                                 <p className="text-muted">{review.created_at}</p>
                             </div>
 
-                            <p className="mb-1">Vote: <strong>{review.vote}</strong></p>
+                            <p className="mb-1">Vote: <strong>{getStarRating(review.vote)}</strong></p>
 
                             <p className="text-muted mb-0">{review.text}</p>
 
