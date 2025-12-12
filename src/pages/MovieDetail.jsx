@@ -4,9 +4,6 @@ import { DotPulse } from 'ldrs/react'
 import Jumbotron from "../components/Jumbotron";
 import 'ldrs/react/DotPulse.css'
 
-// Default values shown
-
-
 export default function MovieDetail() {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
