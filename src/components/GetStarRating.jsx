@@ -1,5 +1,5 @@
 export default function getStarRating(vote) {
-    console.log(vote);
+    //console.log(vote);
     let stars = []
 
     for (let i = 1; i <= 5; i++) {

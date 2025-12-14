@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function MovieCard({ movie }) {
+
     return (
         <div className="card h-100 shadow-sm d-flex flex-row align-items-center p-2">
             <div className="card-image">

@@ -8,6 +8,10 @@ export default function Header() {
                 <Link to="/" className="text-dark fs-4">
                     <i className="bi bi-house-fill"></i>
                 </Link>
+
+                <Link to="/admin" className="text-dark fs-4 ms-3">
+                    <i class="bi bi-person-circle"></i>
+                </Link>
             </nav>
         </header>
     )
