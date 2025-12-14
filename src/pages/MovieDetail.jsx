@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { DotPulse } from 'ldrs/react'
 import Jumbotron from "../components/Jumbotron";
 import 'ldrs/react/DotPulse.css'
+import ReviewList from "./ReviewList";
 
 export default function MovieDetail() {
     const { id } = useParams();
@@ -15,20 +16,6 @@ export default function MovieDetail() {
     }, [id]);
 
     if (!movie) return <DotPulse size="43" speed="1.3" color="black" />;
-
-    function getStarRating(vote) {
-        console.log(vote);
-        let stars = []
-
-        for (let i = 1; i <= 5; i++) {
-            if (i <= vote) {
-                stars.push(<i key={i} className="bi bi-star-fill text-warning"></i>);
-            } else {
-                stars.push(<i key={i} className="bi bi-star text-warning"></i>);
-            }
-        }
-        return stars;
-    }
 
     return (
         <>
@@ -50,24 +37,7 @@ export default function MovieDetail() {
                         <p className="text-muted">{movie.director} - {movie.release_year}</p>
                     </div>
 
-                    <div className="col-12">
-                        <h3 className="mb-4">Reviews</h3>
-
-                        {movie.reviews?.map((review, index) =>
-                            <div key={index} className="mb-4 pb-3 border-bottom">
-
-                                <div className="d-flex justify-content-between">
-                                    <strong>{review.name}</strong>
-                                    <p className="text-muted">{review.created_at}</p>
-                                </div>
-
-                                <p className="mb-1">Vote: <strong>{getStarRating(review.vote)}</strong></p>
-
-                                <p className="text-muted mb-0">{review.text}</p>
-
-                            </div>
-                        )}
-                    </div>
+                    <ReviewList reviews={movie.reviews} />
                 </div>
             </div>
         </>

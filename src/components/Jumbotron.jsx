@@ -1,9 +1,5 @@
 export default function Jumbotron({ pageName, text }) {
 
-
-
-
-
     return (
         <div className="p-2 mb-4 bg-light">
             <div className="container-fluid py-5">
