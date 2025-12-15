@@ -10,7 +10,7 @@ export default function Header() {
                 </Link>
 
                 <Link to="/admin" className="text-dark fs-4 ms-3">
-                    <i class="bi bi-person-circle"></i>
+                    <i className="bi bi-person-circle"></i>
                 </Link>
             </nav>
         </header>
