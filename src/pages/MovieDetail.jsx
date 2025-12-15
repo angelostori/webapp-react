@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { DotPulse } from 'ldrs/react'
+import axios from "axios";
 import Jumbotron from "../components/Jumbotron";
 import 'ldrs/react/DotPulse.css'
-import ReviewList from "./ReviewList";
+import ReviewList from "../components/ReviewList";
 import Form from "../components/Form";
 
 export default function MovieDetail() {
@@ -11,9 +12,11 @@ export default function MovieDetail() {
     const [movie, setMovie] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/api/movies/${id}`)
-            .then(res => res.json())
-            .then(data => setMovie(data));
+        // dati film
+        axios.get(`http://localhost:3000/api/movies/${id}`)
+            .then(res => setMovie(res.data))
+            .catch(err => console.log(err.message));
+
     }, [id]);
 
     if (!movie) return <DotPulse size="43" speed="1.3" color="black" />;

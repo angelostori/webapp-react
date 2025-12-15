@@ -1,4 +1,4 @@
-import getStarRating from "../components/GetStarRating";
+import getStarRating from "./GetStarRating";
 
 
 export default function ReviewList({ reviews }) {
