@@ -11,13 +11,17 @@ export default function MovieDetail() {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
 
-    useEffect(() => {
-        // dati film
-        axios.get(`http://localhost:3000/api/movies/${id}`)
+    const fetchMovie = () => {
+        axios
+            .get(`http://localhost:3000/api/movies/${id}`)
             .then(res => setMovie(res.data))
             .catch(err => console.log(err.message));
+    };
 
+    useEffect(() => {
+        fetchMovie();
     }, [id]);
+
 
     if (!movie) return <DotPulse size="43" speed="1.3" color="black" />;
 
@@ -40,7 +44,7 @@ export default function MovieDetail() {
                         <p className="lead">{movie.abstract}</p>
                         <p className="text-muted">{movie.director} - {movie.release_year}</p>
 
-                        <Form />
+                        <Form movieId={id} onReviewAdded={fetchMovie} />
                     </div>
 
                     <ReviewList reviews={movie.reviews} />
