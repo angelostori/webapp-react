@@ -6,16 +6,21 @@ import Jumbotron from "../components/Jumbotron";
 import 'ldrs/react/DotPulse.css'
 import ReviewList from "../components/ReviewList";
 import Form from "../components/Form";
+import Loader from "../components/Loader";
 
 export default function MovieDetail() {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const fetchMovie = () => {
+        setLoading(true);
+
         axios
             .get(`http://localhost:3000/api/movies/${id}`)
             .then(res => setMovie(res.data))
-            .catch(err => console.log(err.message));
+            .catch(err => console.log(err.message))
+            .finally(() => setLoading(false));
     };
 
     useEffect(() => {
@@ -23,7 +28,7 @@ export default function MovieDetail() {
     }, [id]);
 
 
-    if (!movie) return <DotPulse size="43" speed="1.3" color="black" />;
+    if (loading) return <Loader />;
 
     return (
         <>
