@@ -1,12 +1,12 @@
 MILESTONE 0 
 
-Ragionare e preparare uno schemino per ompostare la struttura del lavoro in maniera da sfruttare la riutailizzabilità dei componenti React e le loro props.✅
+Ragionare e preparare uno schemino per ompostare la struttura del lavoro in maniera da sfruttare la riutailizzabilità dei componenti React e le loro props.
 
 MILESTONE 1
 
-Mettiamo su un nuovo progetto React aiutandoci con Vite✅
-Ripuliamo come sempre l’app da file e codice di esempio non necessari✅
-Installiamo il necessario: React Router, Axios e Bootstrap (se volete utilizzarlo)✅
+Mettiamo su un nuovo progetto React aiutandoci con Vite
+Ripuliamo come sempre l’app da file e codice di esempio non necessari
+Installiamo il necessario: React Router, Axios e Bootstrap (se volete utilizzarlo)
 
 MILESTONE 2
 
