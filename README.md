@@ -1,28 +1,48 @@
-MILESTONE 0 
+# WebApp React
 
-Ragionare e preparare uno schemino per ompostare la struttura del lavoro in maniera da sfruttare la riutailizzabilità dei componenti React e le loro props.
+A modern React web application built with Vite — part of a full-stack project demonstrating front-end skills and integration patterns.
 
-MILESTONE 1
+## 🚀 Overview
 
-Mettiamo su un nuovo progetto React aiutandoci con Vite
-Ripuliamo come sempre l’app da file e codice di esempio non necessari
-Installiamo il necessario: React Router, Axios e Bootstrap (se volete utilizzarlo)
+This project is a React front-end application created using Vite.  
+It showcases routing, API calls, and responsive UI components using Bootstrap.  
+The repository is meant to demonstrate practical use of React and modern web tooling.
 
-MILESTONE 2
+**Status:** Completed / in active development
 
-Creiamo un layout di base per la nostra applicazione ed impostiamo le rotte per le diverse pagine.
-Creiamo 2 pagine:
-La home, in cui mostreremo la lista dei film
-La pagina di dettaglio di un singolo film
+## 🛠️ Technologies Used
 
-MILESTONE 3
+- React  
+- Vite  
+- JavaScript (ES6+)  
+- Bootstrap  
+- HTML5 & CSS3
 
-Configuriamo l’app di backend (repo webapp-express) a ricevere chiamate dalla nostra applicazione React, installando e impostando il middleware CORS
-Proviamo quindi ad effettuare una chiamata Ajax dalla home del progetto React, per ottenere la lista dei libri
+*(See `package.json` for full details)*
 
-MILESTONE 4
+## 📦 Installation & Setup
 
-In ultimo, effettuiamo una chiamata AJAX dalla pagina di dettaglio per ottenere il dettaglio di un singolo film, comprese le sue recensioni
+Make sure you have **Node.js** and **npm/yarn** installed on your machine.
 
-Bonus
-Curare l’aspetto estetico della vostra applicazione
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/angelostori/webapp-react.git
+
+2. Navigate into the project folder:
+  cd webapp-react
+  
+3. Install dependencies:
+  npm i
+
+4. Running the App:
+  npm run dev
+
+## 📌 Notes
+
+This app can be extended with API integration (Node/Express back-end)
+
+Focused on clean organization and practical web patterns
+
+🔗 Related Repositories
+
+Node/Express API backend: [https://github.com/angelostori/...](https://github.com/angelostori/webapp-express.git)
